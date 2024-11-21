@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Circles</title>
+    <link rel="stylesheet" href="dist/vidbg.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .main {
+            width: 500px;
+            height: 1000px;
+            position: relative;
+        }
+
+        @media (max-width: 768px) {
+            .main {
+                width: 391px;
+                height: 845px;
+            }
+        }
+
+        .circle, .circle1, .circle2, .circle3, .circle4 {
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            border-radius: 50%;
+            top: 50%;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+        }
+
+        .circle {
+            background-color: black;
+            animation-name: example;
+        }
+
+        .circle1 {
+            background-color: rgb(47,105,144);
+            animation-name: example1;
+        }
+
+        .circle2 {
+            background-color: rgb(55, 51, 39);
+            animation-name: example2;
+        }
+
+        .circle3 {
+            background-color: rgb(53, 77, 26);
+            animation-name: example3;
+        }
+
+        .circle4 {
+            
+            background-color: rgb(55, 65, 71);
+            animation-name: example4;
+        }
+
+        @keyframes example {
+            0% {
+                left: 15%; /* Start from the left */
+                top: 50%; /* Vertically centered */
+                transform: translateY(-50%);
+            }
+
+            50% {
+                left: 50%; /* Center horizontally */
+                top: 50%; /* Stay vertically centered */
+                transform: translate(-50%, -50%);
+            }
+
+            100% {
+                left: 90%; /* Move to the right */
+                top: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        @keyframes example1 {
+            0% {
+                left: 15%; /* Start from the left */
+                top: 50%; /* Vertically centered */
+                transform: translateY(-50%);
+            }
+
+            50% {
+                left: 50%; /* Center horizontally */
+                top: 50%; /* Stay vertically centered */
+                transform: translate(-50%, -50%);
+            }
+
+            100% {
+                left: 40%; /* Move to the right */
+                top: 45%;
+                transform: translateX(-50%);
+            }
+        }
+
+        @keyframes example2 {
+            0% {
+                left: 5%; /* Start from a slight offset */
+                top: 50%; /* Vertically centered */
+                transform: translateY(-50%);
+            }
+
+            50% {
+                left: 50%; /* Center horizontally */
+                top: 50%; /* Stay vertically centered */
+                transform: translate(-50%, -50%);
+            }
+
+            100% {
+                left: 8%; /* Offset horizontally */
+                top: 58%; /* Move higher */
+                transform: translateX(-50%);
+            }
+        }
+        @keyframes example3 {
+            0% {
+                left: 15%; /* Start from the left */
+                top: 50%; /* Vertically centered */
+                transform: translateY(-50%);
+            }
+
+            50% {
+                left: 50%; /* Center horizontally */
+                top: 50%; /* Stay vertically centered */
+                transform: translate(-50%, -50%);
+            }
+
+            100% {
+                left: 70%; /* Move to the right */
+                top: 50%;
+                transform: translateX(-50%);
+            }
+        }
+        @keyframes example4 {
+           
+            0% {
+                left: 0; /* Start from the left */
+                top: 50%; /* Vertically centered */
+                transform: translateY(-50%);
+            }
+
+            50% {
+                left: 50%; /* Center horizontally */
+                top: 50%; /* Stay vertically centered */
+                transform: translate(-50%, -50%);
+            }
+
+            100% {
+                left: 50%; /* Stay horizontally centered */
+                top: 20%; /* Move upward */
+                transform: translateX(-50%);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="circle"></div>
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+        <div class="circle3"></div>
+        <div class="circle4"></div>
+    </div>
+
+    <script src="dist/vidbg.js"></script>
+    <script>
+        var instance = new vidbg(
+            ".main",
+            {
+                mp4: "Video3_004.mp4", // URL or relative path to MP4 video
+                // webm: "path/to/video.webm", // Uncomment if using a webm file
+                poster: "", // URL or relative path to fallback image
+                overlay: false, // Boolean to display the overlay or not
+                overlayColor: "#000", // The overlay color as a HEX
+                overlayAlpha: 0.3, // The overlay alpha. Think of this as the last integer in RGBA()
+            },
+            {
+                autoplay: true,
+                controls: false,
+                loop: true,
+                muted: true,
+                playsInline: true,
+            }
+        );
+    </script>
+</body>
+
+</html>
